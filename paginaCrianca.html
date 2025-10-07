@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Cash Coinc</title>
+  <style>
+    :root {
+      --cor-bege: #F5F0E1;
+      --cor-pastel: #F5C2C2;
+      --cor-rosa: #EC5C8F;
+      --cor-rosalemonade: #D34C74;
+      --cor-marinhoprofundo: #1A2E45;
+      --cor-azul-link: #2A8BEF;
+      --cor-cinza-borda: #A19999;
+      --cor-cinza: #ddd;
+      --cor-preto: #000;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--cor-bege);
+    }
+
+    .container {
+      max-width: 100%;
+      min-height: 100vh;
+      background: var(--cor-bege);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* === HEADER (ajustado para ficar igual à imagem do card) === */
+    .header {
+      text-align: center;
+      padding: 1.5rem 1rem 1rem;
+    }
+
+    .header img {
+      width: 154px;
+      height: 38px;
+      top: 16px;
+      left: 111px;
+    }
+
+    .header span {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--cor-rosa);
+      vertical-align: middle;
+    }
+
+    .header p {
+      margin: 0.5rem 0;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--cor-marinhoprofundo);
+    }
+
+    .produto-img {
+      width: 249px;
+      height: 218px;
+      background: var(--cor-cinza);
+      border-radius: 10px;
+      margin: 0.5rem 0 1rem 0;
+    }
+
+    /* Link igual ao da imagem */
+    .link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      font-size: 16px;
+      color: var(--cor-preto);
+      text-decoration: none;
+      border-bottom: 5px solid #D9D9D9;
+      padding: 16px 17px;
+    }
+
+    .link::after {
+      content: "›";
+      font-size: 1rem;
+      margin-left: auto;
+      width: 13px;
+      height: 13px;
+    }
+
+    /* Section registrar */
+    .section {
+      width: 100%;
+      padding: 1rem;
+    }
+
+    .section h3 {
+      color: var(--cor-marinhoprofundo);
+      font-size: 20px;
+      font-weight: 700;
+      width: 86px;
+      height: 27px;
+    }
+
+    .section .meta-aplicada {
+      color: var(--cor-rosa);
+      font-size: 16px;
+      font-weight: 400;
+      width: 101px;
+      height: 22px;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .radio-group a {
+      color: var(--cor-azul-link);
+      text-decoration: none;
+    }
+
+    /* Caixa meta separada */
+    .meta-box {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .meta-item {
+      flex: 1;
+      background: #F3F3F3;
+      border: 1px solid var(--cor-rosa);
+      border-radius: 8px;
+      padding: 0.8rem;
+      font-size: 0.9rem;
+      color: #000;
+      font-weight: bold;
+      text-align: center;
+      width: 193px;
+      height: 37px;
+    }
+
+    .rosa {
+      color: var(--cor-rosa);
+    }
+
+    .label-input {
+      font-size: 0.85rem;
+      color: var(--cor-rosa);
+      margin: 0.5rem 0 0.2rem 0;
+      display: block;
+    }
+
+    .input-container {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .input {
+      flex: 1;
+      padding: 0.7rem;
+      border: 2px solid var(--cor-rosa);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: #000;
+    }
+
+    .input::placeholder {
+      color: #000;
+      font-size: 0.85rem;
+    }
+
+    /* 🔔 Mensagem responsável */
+    .mensagem-responsavel {
+      width: 100%;
+      background: var(--cor-bege);
+      border-top: 1px solid var(--cor-cinza-borda);
+      border-bottom: 1px solid var(--cor-cinza-borda);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .mensagem-titulo {
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--cor-marinhoprofundo);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      justify-content: center;
+    }
+
+    .notificacao {
+      background: red;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .caixa-mensagem {
+      width: 278px;         
+      height: 55px;         
+      border: 2px solid var(--cor-rosa); 
+      margin-top: 0.8rem;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      text-align: center;
+      color: #000;
+      display: flex;        
+      align-items: center;
+      justify-content: center;
+      background: none;         
+      cursor: pointer;          
+      font-family: inherit;     
+      font-weight: normal;      
+    }
+    .caixa-mensagem:focus {
+      outline: none;
+    }
+
+    /* Meta alinhada à esquerda */
+    .meta {
+      width: 90%;
+      margin: 1rem 0 1rem 0;
+      background: var(--cor-bege);
+      border-radius: 6px;
+      font-size: 0.9rem;
+      align-self: flex-start;
+      padding: 1rem;
+    }
+
+    .meta h3 {
+      margin: 0 0 0.8rem 0;
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--cor-marinhoprofundo);
+      text-align: left;
+    }
+
+    .meta-tag {
+      display: inline-flex;
+      align-items: center;
+      background: var(--cor-bege);
+      border: 1px solid var(--cor-cinza-borda);
+      border-radius: 20px;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.85rem;
+      color: var(--cor-cinza-borda);
+      margin-bottom: 0.6rem;
+    }
+
+    .meta-tag button {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      margin-left: 0.5rem;
+      cursor: pointer;
+      color: #000;
+    }
+
+    .btn-link {
+      background: none;
+      border: none;
+      color: var(--cor-azul-link);
+      font-size: 0.9rem;
+      cursor: pointer;
+      padding: 0;
+      text-align: left;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px var(--cor-cinza-borda) solid;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .footer img {
+      width: 335px;
+      height: auto;
+      margin-bottom: 0.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--cor-rosa);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      width: 171px;
+      height: 54px;
+      margin-top: 0;
+    }
+
+    .btn:hover {
+      background: var(--cor-rosalemonade);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <img src="./img/logo.png" alt="logo">
+      <p>Produto</p>
+      <div class="produto-img"></div>
+    </div>
+
+    <!-- Link -->
+    <a class="link" href="#">Ir para o website</a>
+
+    <!-- Registrar -->
+    <div class="section">
+      <h3>Registrar</h3>
+      <p class="meta-aplicada">Meta aplicada</p>
+
+      <div class="radio-group">
+        <label><input type="radio" name="meta"> Economizar para <a href="#">meta</a></label>
+        <label><input type="radio" name="meta"> Economizar apenas.</label>
+      </div>
+
+      <div class="meta-box">
+        <div class="meta-item">Video Game Xbox</div>
+        <div class="meta-item"><span class="rosa">R$</span> 3.000,00</div>
+      </div>
+
+      <label class="label-input">Valor do depósito</label>
+      <div class="input-container">
+        <input class="input" type="number" placeholder="R$ 0" >
+      </div>
+
+      <label class="label-input">Valor do saque</label>
+      <div class="input-container">
+        <input class="input" type="number" placeholder="R$ 0">
+      </div>
+    </div>
+
+    <!-- 🔔 Mensagem responsável -->
+    <div class="mensagem-responsavel">
+      <div class="mensagem-titulo">
+        Mensagem responsável <span class="notificacao">1</span>
+      </div>
+      <button class="caixa-mensagem">
+        Parabéns pelo progresso filho(a)!
+      </button>
+    </div>
+
+    <!-- Meta -->
+    <div class="meta">
+      <h3>Meta</h3>
+      <div class="meta-tag">
+        Video Game Xbox <button>×</button>
+      </div>
+      <br>
+      <button class="btn-link">+ Criar meta</button>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>Jogue agora no seu próprio SmartCoinc!</p>
+      <img src="./img/porco.png" alt="porquinho" class="porco-img">
+      <button class="btn">JOGAR</button>
+    </div>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cash Coinc - Pai</title>
+  <style>
+    :root {
+      --cor-bege: #F5F0E1;
+      --cor-pastel: #F5C2C2;
+      --cor-rosa: #EC5C8F;
+      --cor-rosalemonade: #D34C74;
+      --cor-marinhoprofundo: #1A2E45;
+      --cor-azul-link: #2A8BEF;
+      --cor-cinza-borda: #A19999;
+      --cor-cinza: #ddd;
+      --cor-preto: #000;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--cor-bege);
+    }
+    .container {
+      max-width: 100%;
+      min-height: 100vh;
+      background: var(--cor-bege);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+
+    .header {
+      text-align: center;
+      padding: 1.5rem 1rem 1rem;
+    }
+
+    .header img {
+      width: 154px;
+      height: 38px;
+      top: 16px;
+      left: 111px;
+    }
+
+    .header span {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--cor-rosa);
+      vertical-align: middle;
+    }
+
+    .header p {
+      margin: 0.5rem 0;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--cor-marinhoprofundo);
+    }
+
+    .produto-img {
+      width: 249px;
+      height: 218px;
+      background: var(--cor-cinza);
+      border-radius: 10px;
+      margin: 0.5rem 0 1rem 0;
+    }
+
+    /* Link igual ao da imagem */
+    .link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      font-size: 16px;
+      color: var(--cor-preto);
+      text-decoration: none;
+      border-bottom: 5px solid #D9D9D9;
+      padding: 16px 17px;
+    }
+
+    .link::after {
+      content: "›";
+      font-size: 1rem;
+      margin-left: auto;
+      width: 13px;
+      height: 13px;
+    }
+
+    .historico {
+      margin-top: 16px;
+      border-top: 1px solid #e0e0e0;
+      padding-top: 10px;
+    }
+
+    .historico h3 {
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .legenda {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 11px;
+      margin-bottom: 10px;
+    }
+
+    .legenda span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .verde { background-color: green; }
+    .azul { background-color: #00bfff; }
+    .vermelho { background-color: red; }
+
+    .valores {
+      background-color: white;
+      border-radius: 6px;
+      padding: 10px;
+      font-size: 12px;
+      color: #333;
+      box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .valores p {
+      margin: 3px 0;
+    }
+
+    .valores .vermelho { color: red; }
+    .valores .azul { color: #00bfff; }
+    .valores .verde { color: green; }
+
+    .mensagem {
+      margin-top: 16px;
+      border-top: 1px solid #e0e0e0;
+      padding-top: 10px;
+    }
+
+    .mensagem h3 {
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .mensagem input {
+      width: 100%;
+      padding: 8px;
+      font-size: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+
+    .mensagem button {
+      width: 100%;
+      background-color: #f56b84;
+      color: white;
+      padding: 8px;
+      border: none;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .meta {
+      margin-top: 16px;
+      border-top: 1px solid #e0e0e0;
+      padding-top: 10px;
+    }
+
+    .meta h3 {
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .meta-barra {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+
+    .meta-barra span {
+      font-size: 11px;
+      color: #555;
+    }
+
+    .meta-barra img {
+      width: 22px;
+      height: 22px;
+    }
+
+    progress {
+      width: 100%;
+      height: 10px;
+      appearance: none;
+    }
+
+    progress::-webkit-progress-bar {
+      background-color: #f1f1f1;
+      border-radius: 5px;
+    }
+
+    progress::-webkit-progress-value {
+      background-color: #f56b84;
+      border-radius: 5px;
+    }
+
+    .porcentagem {
+      font-size: 11px;
+      text-align: right;
+      margin-top: 4px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <img src="./img/logo.png" alt="logo">
+      <p>Produto</p>
+      <div class="produto-img"></div>
+    </div>
+
+        <!-- Link -->
+    <a class="link" href="#">Ir para o website</a>
+
+    <div class="historico">
+      <h3>Histórico</h3>
+      <div class="legenda">
+        <span><span class="dot verde"></span> Economizar para <strong>meta</strong></span>
+        <span><span class="dot azul"></span> Economizar para <strong>investimento</strong></span>
+        <span><span class="dot vermelho"></span> Retirada</span>
+      </div>
+      <div class="valores">
+        <p class="vermelho">-4,00</p>
+        <p class="azul">+20,00</p>
+        <p class="azul">+2,00</p>
+        <p class="verde">+90,00</p>
+      </div>
+    </div>
+
+    <div class="mensagem">
+      <h3>Mensagem</h3>
+      <input type="text" value="Parabéns pelo progresso filho! ❤️" />
+      <button>ENVIAR</button>
+    </div>
+
+    <div class="meta">
+      <h3>Meta</h3>
+      <div class="meta-barra">
+        <span>Video Game Xbox</span>
+        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" alt="Presente" />
+      </div>
+      <progress value="67" max="100"></progress>
+      <div class="porcentagem">Progresso da meta: 67%</div>
+    </div>
+  </div>
+</body>
+</html>
