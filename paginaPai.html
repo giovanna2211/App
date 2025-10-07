@@ -65,10 +65,12 @@
       align-items: center;
       width: 100%;
       font-size: 16px;
+      font-weight: 400;
       color: var(--cor-preto);
       text-decoration: none;
       border-bottom: 5px solid #D9D9D9;
       padding: 16px 17px;
+      margin-left: 10px;
     }
 
     .link::after {
@@ -104,6 +106,7 @@
       flex-direction: column;
       gap: 0.2rem;
       margin-bottom: 16px;
+      margin-left: 10px;
     }
 
     .legenda-item {
@@ -118,7 +121,7 @@
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      margin-right: 6px;
+      margin-right: 20px;
     }
 
     .bolinha.azul { background: var(--cor-azul-meta); }
@@ -153,6 +156,7 @@
       text-align: right;
       font-weight: bold;
       min-height: 60px;
+      margin-left: 10px;
     }
 
     .valor-azul { color: var(--cor-azul-meta); }
@@ -174,24 +178,57 @@
     }
 
     .mensagem h3 {
-      font-size: 1rem;
-      font-weight: bold;
+      font-size: 20px;
+      font-weight: 700;
       color: var(--cor-marinhoprofundo);
       margin-bottom: 0.6rem;
       text-align: left;
+      margin-left: 1px;
     }
 
-    .mensagem-input {
-      width: 100%;
-      border: 2px solid var(--cor-rosa);
-      border-radius: 8px;
-      padding: 0.6rem;
-      font-size: 0.85rem;
-      color: #000;
-      margin-bottom: 0.8rem;
+    .mensagem-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .seta {
+        background: none;
+        border: none;
+        font-size: 20px;
+        font-weight: bold;
+        color: var(--cor-marinhoprofundo);
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+
+    .seta:hover {
+        transform: scale(1.2);
+        color: var(--cor-rosa);
+    }
+
+    .caixa-mensagem {
+        width: 260px;
+        height: 55px;
+        border: 2px solid var(--cor-rosa);
+        border-radius: 2px;
+        font-size: 16px;
+        text-align: center;
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        font-weight: 400;
+    }
+
+    .caixa-mensagem:focus {
+      outline: none;
     }
 
     .mensagem-btn {
+      margin-top: 15px;
       background: var(--cor-rosa);
       color: white;
       font-size: 0.9rem;
@@ -299,11 +336,16 @@
 
     <!-- MENSAGEM -->
     <div class="mensagem">
-      <h3>Mensagem</h3>
-      <input class="mensagem-input" type="text" value="Parabéns pelo progresso filho(a)!" />
-      <button class="mensagem-btn">ENVIAR</button>
+        <h3>Mensagem</h3>
+        <div class="mensagem-container">
+            <button class="seta seta-esquerda">‹</button>
+        <div class="caixa-mensagem">
+            Parabéns pelo progresso filho(a)!
+        </div>
+        <button class="seta seta-direita">›</button>
+        </div>
+        <button class="mensagem-btn">ENVIAR</>
     </div>
-
     <!-- META -->
     <div class="meta">
       <h3>Meta</h3>
