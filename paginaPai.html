@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cash Coinc - Pai</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Cash Coinc</title>
   <style>
     :root {
       --cor-bege: #F5F0E1;
@@ -11,10 +11,12 @@
       --cor-rosa: #EC5C8F;
       --cor-rosalemonade: #D34C74;
       --cor-marinhoprofundo: #1A2E45;
-      --cor-azul-link: #2A8BEF;
       --cor-cinza-borda: #A19999;
       --cor-cinza: #ddd;
       --cor-preto: #000;
+      --cor-azul-meta: #1CB0F6;
+      --cor-verde-invest: #1CF640;
+      --cor-vermelha-retirada: #DA2C2C;
     }
 
     body {
@@ -22,6 +24,7 @@
       font-family: Arial, sans-serif;
       background: var(--cor-bege);
     }
+
     .container {
       max-width: 100%;
       min-height: 100vh;
@@ -31,7 +34,6 @@
       align-items: center;
     }
 
-
     .header {
       text-align: center;
       padding: 1.5rem 1rem 1rem;
@@ -40,15 +42,6 @@
     .header img {
       width: 154px;
       height: 38px;
-      top: 16px;
-      left: 111px;
-    }
-
-    .header span {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: var(--cor-rosa);
-      vertical-align: middle;
     }
 
     .header p {
@@ -66,7 +59,6 @@
       margin: 0.5rem 0 1rem 0;
     }
 
-    /* Link igual ao da imagem */
     .link {
       display: flex;
       justify-content: space-between;
@@ -87,185 +79,243 @@
       height: 13px;
     }
 
+    /* ====== HISTÓRICO ====== */
     .historico {
-      margin-top: 16px;
-      border-top: 1px solid #e0e0e0;
-      padding-top: 10px;
+      background: var(--cor-bege);
+      width: 280px;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: left;
+      font-size: 0.9rem;
+      color: var(--cor-preto);
     }
 
     .historico h3 {
-      font-size: 13px;
-      margin-bottom: 8px;
+      font-size: 20px;
+      font-weight: 700;
+      width: 84px;
+      height: 27px;
+      color: var(--cor-marinhoprofundo);
+      margin-bottom: 0.6rem;
     }
 
     .legenda {
       display: flex;
       flex-direction: column;
-      gap: 4px;
-      font-size: 11px;
-      margin-bottom: 10px;
+      gap: 0.2rem;
+      margin-bottom: 16px;
     }
 
-    .legenda span {
+    .legenda-item {
       display: flex;
       align-items: center;
-      gap: 4px;
+      font-size: 16px;
+      font-weight: 400;
+
     }
 
-    .dot {
-      width: 8px;
-      height: 8px;
+    .bolinha {
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
-      display: inline-block;
+      margin-right: 6px;
     }
 
-    .verde { background-color: green; }
-    .azul { background-color: #00bfff; }
-    .vermelho { background-color: red; }
+    .bolinha.azul { background: var(--cor-azul-meta); }
+    .bolinha.verde { background: var(--cor-verde-invest); }
+    .bolinha.vermelha { background: var(--cor-vermelha-retirada); }
 
-    .valores {
-      background-color: white;
-      border-radius: 6px;
-      padding: 10px;
-      font-size: 12px;
-      color: #333;
-      box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+    /* Cores dos links específicas */
+   .link-meta,
+    .link-invest {
+        margin-left: 4px;
+        text-decoration: none;
+        font-weight: 500;
     }
 
-    .valores p {
-      margin: 3px 0;
+    .link-meta {
+        color: var(--cor-azul-meta);
     }
 
-    .valores .vermelho { color: red; }
-    .valores .azul { color: #00bfff; }
-    .valores .verde { color: green; }
+    .link-invest {
+        color: var(--cor-verde-invest);
+    }   
 
+
+    .link-meta:hover,
+    .link-invest:hover {
+      text-decoration: underline;
+    }
+
+    .historico-box {
+      background: #fff;
+      padding: 0.5rem;
+      text-align: right;
+      font-weight: bold;
+      min-height: 60px;
+    }
+
+    .valor-azul { color: var(--cor-azul-meta); }
+    .valor-verde { color: var(--cor-verde-invest); }
+    .valor-vermelho { color: var(--cor-vermelha-retirada); }
+
+    /* ====== MENSAGEM ====== */
     .mensagem {
-      margin-top: 16px;
-      border-top: 1px solid #e0e0e0;
-      padding-top: 10px;
+      border-top: 5px solid #D9D9D9;
+      background: var(--cor-bege);
+      width: 280px;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--cor-preto);
+      border-bottom: 5px solid #D9D9D9;
+      margin-top: 1rem;
     }
 
     .mensagem h3 {
-      font-size: 13px;
-      margin-bottom: 6px;
-    }
-
-    .mensagem input {
-      width: 100%;
-      padding: 8px;
-      font-size: 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      margin-bottom: 8px;
-    }
-
-    .mensagem button {
-      width: 100%;
-      background-color: #f56b84;
-      color: white;
-      padding: 8px;
-      border: none;
-      border-radius: 20px;
-      font-size: 13px;
+      font-size: 1rem;
       font-weight: bold;
-      cursor: pointer;
+      color: var(--cor-marinhoprofundo);
+      margin-bottom: 0.6rem;
+      text-align: left;
     }
 
+    .mensagem-input {
+      width: 100%;
+      border: 2px solid var(--cor-rosa);
+      border-radius: 8px;
+      padding: 0.6rem;
+      font-size: 0.85rem;
+      color: #000;
+      margin-bottom: 0.8rem;
+    }
+
+    .mensagem-btn {
+      background: var(--cor-rosa);
+      color: white;
+      font-size: 0.9rem;
+      font-weight: bold;
+      padding: 0.6rem 2rem;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .mensagem-btn:hover {
+      background: var(--cor-rosalemonade);
+    }
+
+    /* ====== META ====== */
     .meta {
-      margin-top: 16px;
-      border-top: 1px solid #e0e0e0;
-      padding-top: 10px;
+      background: var(--cor-bege);
+      width: 280px;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: left;
+      font-size: 0.9rem;
+      color: var(--cor-preto);
+      margin-top: 1rem;
+      margin-bottom: 2rem;
     }
 
     .meta h3 {
-      font-size: 13px;
-      margin-bottom: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--cor-marinhoprofundo);
+      margin-bottom: 0.6rem;
     }
 
-    .meta-barra {
+    .meta-top {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-bottom: 4px;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.8rem;
     }
 
-    .meta-barra span {
-      font-size: 11px;
-      color: #555;
+    .meta-item {
+      flex: 1;
+      background: #F3F3F3;
+      border: 1px solid var(--cor-rosa);
+      border-radius: 8px;
+      padding: 0.5rem;
+      font-size: 0.85rem;
+      color: #000;
+      font-weight: bold;
+      text-align: center;
+      height: 35px;
     }
 
-    .meta-barra img {
-      width: 22px;
-      height: 22px;
-    }
-
-    progress {
+    .range {
       width: 100%;
-      height: 10px;
-      appearance: none;
-    }
-
-    progress::-webkit-progress-bar {
-      background-color: #f1f1f1;
-      border-radius: 5px;
-    }
-
-    progress::-webkit-progress-value {
-      background-color: #f56b84;
-      border-radius: 5px;
+      accent-color: var(--cor-rosa);
     }
 
     .porcentagem {
-      font-size: 11px;
-      text-align: right;
-      margin-top: 4px;
-      color: #333;
+      text-align: center;
+      margin-top: 0.5rem;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Header -->
+    <!-- Cabeçalho e Produto -->
     <div class="header">
       <img src="./img/logo.png" alt="logo">
       <p>Produto</p>
       <div class="produto-img"></div>
     </div>
 
-        <!-- Link -->
     <a class="link" href="#">Ir para o website</a>
 
+    <!-- Histórico -->
     <div class="historico">
       <h3>Histórico</h3>
       <div class="legenda">
-        <span><span class="dot verde"></span> Economizar para <strong>meta</strong></span>
-        <span><span class="dot azul"></span> Economizar para <strong>investimento</strong></span>
-        <span><span class="dot vermelho"></span> Retirada</span>
-      </div>
-      <div class="valores">
-        <p class="vermelho">-4,00</p>
-        <p class="azul">+20,00</p>
-        <p class="azul">+2,00</p>
-        <p class="verde">+90,00</p>
+            <div class="legenda-item">
+                <span class="bolinha azul"></span>
+                    Economizar para <a href="#" class="link-meta">meta</a>
+            </div>
+            <div class="legenda-item">
+                <span class="bolinha verde"></span>
+                    Economizar para <a href="#" class="link-invest">investimento.</a>
+            </div>
+            <div class="legenda-item">
+                <span class="bolinha vermelha"></span>
+                    Retirada
+            </div>
+        </div>
+
+      <div class="historico-box">
+        <div class="valor-vermelho">-4,00</div>
+        <div class="valor-verde">20,00</div>
+        <div class="valor-vermelho">-2,00</div>
+        <div class="valor-azul">90,00</div>
       </div>
     </div>
 
+    <!-- MENSAGEM -->
     <div class="mensagem">
       <h3>Mensagem</h3>
-      <input type="text" value="Parabéns pelo progresso filho! ❤️" />
-      <button>ENVIAR</button>
+      <input class="mensagem-input" type="text" value="Parabéns pelo progresso filho(a)!" />
+      <button class="mensagem-btn">ENVIAR</button>
     </div>
 
+    <!-- META -->
     <div class="meta">
       <h3>Meta</h3>
-      <div class="meta-barra">
-        <span>Video Game Xbox</span>
-        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" alt="Presente" />
+      <div class="meta-top">
+        <div class="meta-item">Video Game Xbox</div>
+        <img src="./img/presente.png" alt="presente">
       </div>
-      <progress value="67" max="100"></progress>
-      <div class="porcentagem">Progresso da meta: 67%</div>
+      <input type="range" min="0" max="100" value="87" class="range" />
+      <div class="porcentagem">Porcentagem da meta: <strong>87%</strong></div>
     </div>
   </div>
 </body>
 </html>
+
+
