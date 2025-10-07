@@ -34,9 +34,10 @@
       align-items: center;
     }
 
+    /* ====== CABEÇALHO ====== */
     .header {
       text-align: center;
-      padding: 1.5rem 1rem 1rem;
+      padding: 24px 16px 16px;
     }
 
     .header img {
@@ -45,7 +46,7 @@
     }
 
     .header p {
-      margin: 0.5rem 0;
+      margin: 8px 0;
       font-size: 16px;
       font-weight: 700;
       color: var(--cor-marinhoprofundo);
@@ -56,7 +57,7 @@
       height: 218px;
       background: var(--cor-cinza);
       border-radius: 10px;
-      margin: 0.5rem 0 1rem 0;
+      margin: 8px 0 16px 0;
     }
 
     .link {
@@ -70,12 +71,12 @@
       text-decoration: none;
       border-bottom: 5px solid #D9D9D9;
       padding: 16px 17px;
-      margin-left: 10px;
+      margin-left: 20px;
     }
 
     .link::after {
       content: "›";
-      font-size: 1rem;
+      font-size: 16px;
       margin-left: auto;
       width: 13px;
       height: 13px;
@@ -86,9 +87,9 @@
       background: var(--cor-bege);
       width: 280px;
       border-radius: 8px;
-      padding: 1rem;
+      padding: 16px;
       text-align: left;
-      font-size: 0.9rem;
+      font-size: 14px;
       color: var(--cor-preto);
     }
 
@@ -98,13 +99,13 @@
       width: 84px;
       height: 27px;
       color: var(--cor-marinhoprofundo);
-      margin-bottom: 0.6rem;
+      margin-bottom: 10px;
     }
 
     .legenda {
       display: flex;
       flex-direction: column;
-      gap: 0.2rem;
+      gap: 4px;
       margin-bottom: 16px;
       margin-left: 10px;
     }
@@ -114,7 +115,6 @@
       align-items: center;
       font-size: 16px;
       font-weight: 400;
-
     }
 
     .bolinha {
@@ -128,31 +128,22 @@
     .bolinha.verde { background: var(--cor-verde-invest); }
     .bolinha.vermelha { background: var(--cor-vermelha-retirada); }
 
-    /* Cores dos links específicas */
-   .link-meta,
+    .link-meta,
     .link-invest {
-        margin-left: 4px;
-        text-decoration: none;
-        font-weight: 500;
+      margin-left: 4px;
+      text-decoration: none;
+      font-weight: 500;
     }
 
-    .link-meta {
-        color: var(--cor-azul-meta);
-    }
-
-    .link-invest {
-        color: var(--cor-verde-invest);
-    }   
-
+    .link-meta { color: var(--cor-azul-meta); }
+    .link-invest { color: var(--cor-verde-invest); }
 
     .link-meta:hover,
-    .link-invest:hover {
-      text-decoration: underline;
-    }
+    .link-invest:hover { text-decoration: underline; }
 
     .historico-box {
       background: #fff;
-      padding: 0.5rem;
+      padding: 8px;
       text-align: right;
       font-weight: bold;
       min-height: 60px;
@@ -169,137 +160,165 @@
       background: var(--cor-bege);
       width: 280px;
       border-radius: 8px;
-      padding: 1rem;
+      padding: 16px;
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 14px;
       color: var(--cor-preto);
       border-bottom: 5px solid #D9D9D9;
-      margin-top: 1rem;
+      margin-top: 16px;
     }
 
     .mensagem h3 {
       font-size: 20px;
       font-weight: 700;
       color: var(--cor-marinhoprofundo);
-      margin-bottom: 0.6rem;
+      margin-bottom: 10px;
       text-align: left;
       margin-left: 1px;
     }
 
     .mensagem-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
 
     .seta {
-        background: none;
-        border: none;
-        font-size: 20px;
-        font-weight: bold;
-        color: var(--cor-marinhoprofundo);
-        cursor: pointer;
-        transition: transform 0.2s;
+      background: none;
+      border: none;
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--cor-marinhoprofundo);
+      cursor: pointer;
+      transition: transform 0.2s;
     }
 
     .seta:hover {
-        transform: scale(1.2);
-        color: var(--cor-rosa);
+      transform: scale(1.2);
+      color: var(--cor-rosa);
     }
 
     .caixa-mensagem {
-        width: 260px;
-        height: 55px;
-        border: 2px solid var(--cor-rosa);
-        border-radius: 2px;
-        font-size: 16px;
-        text-align: center;
-        color: #000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: none;
-        font-weight: 400;
-    }
-
-    .caixa-mensagem:focus {
-      outline: none;
+      width: 260px;
+      height: 55px;
+      border: 2px solid var(--cor-rosa);
+      border-radius: 2px;
+      font-size: 16px;
+      text-align: center;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      font-weight: 400;
     }
 
     .mensagem-btn {
       margin-top: 15px;
       background: var(--cor-rosa);
       color: white;
-      font-size: 0.9rem;
+      font-size: 14px;
       font-weight: bold;
-      padding: 0.6rem 2rem;
+      padding: 10px 32px;
       border-radius: 20px;
       border: none;
       cursor: pointer;
       transition: 0.3s;
     }
 
-    .mensagem-btn:hover {
-      background: var(--cor-rosalemonade);
-    }
+    .mensagem-btn:hover { background: var(--cor-rosalemonade); }
 
     /* ====== META ====== */
     .meta {
       background: var(--cor-bege);
       width: 280px;
       border-radius: 8px;
-      padding: 1rem;
+      padding: 16px;
       text-align: left;
-      font-size: 0.9rem;
+      font-size: 14px;
       color: var(--cor-preto);
-      margin-top: 1rem;
-      margin-bottom: 2rem;
+      margin-bottom: 32px;
     }
 
     .meta h3 {
-      font-size: 1rem;
-      font-weight: bold;
+      font-size: 20px;
+      font-weight: 700;
       color: var(--cor-marinhoprofundo);
-      margin-bottom: 0.6rem;
+      margin-bottom: 10px;
     }
 
-    .meta-top {
+    .meta-tag {
+      display: inline-flex;
+      align-items: center;
+      background: var(--cor-bege);
+      border: 1px solid var(--cor-cinza-borda);
+      border-radius: 20px;
+      padding: 5px 12px;
+      font-size: 13px;
+      color: var(--cor-cinza-borda);
+      margin-bottom: 10px;
+    }
+
+    .progresso-container {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
-      margin-bottom: 0.8rem;
+      justify-content: flex-start;
+      gap: 0;
+      margin-bottom: 8px;
     }
 
-    .meta-item {
+    .barra-progresso {
+      position: relative;
       flex: 1;
-      background: #F3F3F3;
-      border: 1px solid var(--cor-rosa);
-      border-radius: 8px;
-      padding: 0.5rem;
-      font-size: 0.85rem;
-      color: #000;
-      font-weight: bold;
-      text-align: center;
-      height: 35px;
+      height: 16px;
+      background: #e5e5e5;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-right: -10px;
     }
 
-    .range {
-      width: 100%;
-      accent-color: var(--cor-rosa);
+    .progresso {
+      background: var(--cor-rosa);
+      height: 100%;
+      border-radius: 10px;
+      position: relative;
+      width: 87%;
+    }
+
+    .marcador {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(50%, -50%);
+      width: 18px;
+      height: 18px;
+      background: #fff;
+      border: 2px solid var(--cor-rosa);
+      border-radius: 50%;
+    }
+
+    .presente-img {
+      width: 35px;
+      height: auto;
+      transform: translateX(-4px);
     }
 
     .porcentagem {
-      text-align: center;
-      margin-top: 0.5rem;
-      font-weight: bold;
+      text-align: left;
+      margin-top: 6px;
+      font-weight: 400;
+      font-size: 12px;
+      color: #A19999;
+      margin-left: 3px;
     }
+
+    .porcentagem span { color: #000; }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Cabeçalho e Produto -->
+    <!-- CABEÇALHO -->
     <div class="header">
       <img src="./img/logo.png" alt="logo">
       <p>Produto</p>
@@ -308,23 +327,23 @@
 
     <a class="link" href="#">Ir para o website</a>
 
-    <!-- Histórico -->
+    <!-- HISTÓRICO -->
     <div class="historico">
       <h3>Histórico</h3>
       <div class="legenda">
-            <div class="legenda-item">
-                <span class="bolinha azul"></span>
-                    Economizar para <a href="#" class="link-meta">meta</a>
-            </div>
-            <div class="legenda-item">
-                <span class="bolinha verde"></span>
-                    Economizar para <a href="#" class="link-invest">investimento.</a>
-            </div>
-            <div class="legenda-item">
-                <span class="bolinha vermelha"></span>
-                    Retirada
-            </div>
+        <div class="legenda-item">
+          <span class="bolinha azul"></span>
+          Economizar para <a href="#" class="link-meta">meta</a>
         </div>
+        <div class="legenda-item">
+          <span class="bolinha verde"></span>
+          Economizar para <a href="#" class="link-invest">investimento.</a>
+        </div>
+        <div class="legenda-item">
+          <span class="bolinha vermelha"></span>
+          Retirada
+        </div>
+      </div>
 
       <div class="historico-box">
         <div class="valor-vermelho">-4,00</div>
@@ -336,28 +355,34 @@
 
     <!-- MENSAGEM -->
     <div class="mensagem">
-        <h3>Mensagem</h3>
-        <div class="mensagem-container">
-            <button class="seta seta-esquerda">‹</button>
+      <h3>Mensagem</h3>
+      <div class="mensagem-container">
+        <button class="seta seta-esquerda">‹</button>
         <div class="caixa-mensagem">
-            Parabéns pelo progresso filho(a)!
+          Parabéns pelo progresso filho(a)!
         </div>
         <button class="seta seta-direita">›</button>
-        </div>
-        <button class="mensagem-btn">ENVIAR</>
+      </div>
+      <button class="mensagem-btn">ENVIAR</button>
     </div>
+
     <!-- META -->
     <div class="meta">
       <h3>Meta</h3>
-      <div class="meta-top">
-        <div class="meta-item">Video Game Xbox</div>
-        <img src="./img/presente.png" alt="presente">
+      <div class="meta-tag">Video Game Xbox</div>
+      <div class="progresso-container">
+        <div class="barra-progresso">
+          <div class="progresso">
+            <div class="marcador"></div>
+          </div>
+        </div>
+        <img src="./img/presente.png" alt="presente" class="presente-img">
       </div>
-      <input type="range" min="0" max="100" value="87" class="range" />
-      <div class="porcentagem">Porcentagem da meta: <strong>87%</strong></div>
+      <div class="porcentagem">Porcentagem da meta: <span>87%</span></div>
     </div>
   </div>
 </body>
 </html>
+
 
 

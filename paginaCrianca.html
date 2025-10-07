@@ -25,35 +25,36 @@
 
     .container {
       max-width: 100%;
-      min-height: 100vh;
+      min-height: 800px;
       background: var(--cor-bege);
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    /* === HEADER (ajustado para ficar igual à imagem do card) === */
+    /* HEADER */
     .header {
       text-align: center;
-      padding: 1.5rem 1rem 1rem;
+      padding: 24px 16px 16px;
     }
 
     .header img {
       width: 154px;
       height: 38px;
+      position: relative;
       top: 16px;
       left: 111px;
     }
 
     .header span {
-      font-size: 1.2rem;
+      font-size: 19px;
       font-weight: bold;
       color: var(--cor-rosa);
       vertical-align: middle;
     }
 
     .header p {
-      margin: 0.5rem 0;
+      margin: 8px 0;
       font-size: 16px;
       font-weight: 700;
       color: var(--cor-marinhoprofundo);
@@ -64,10 +65,10 @@
       height: 218px;
       background: var(--cor-cinza);
       border-radius: 10px;
-      margin: 0.5rem 0 1rem 0;
+      margin: 8px 0 16px 0;
     }
 
-    /* Link igual ao da imagem */
+    /* LINK */
     .link {
       display: flex;
       justify-content: space-between;
@@ -79,21 +80,21 @@
       text-decoration: none;
       border-bottom: 5px solid #D9D9D9;
       padding: 16px 17px;
-      margin-left: 10;
+      margin-left: 10px;
     }
 
     .link::after {
       content: "›";
-      font-size: 1rem;
+      font-size: 16px;
       margin-left: auto;
       width: 13px;
       height: 13px;
     }
 
-    /* Section registrar */
+    /* SECTION */
     .section {
       width: 100%;
-      padding: 1rem;
+      padding: 16px;
     }
 
     .section h3 {
@@ -116,9 +117,9 @@
     .radio-group {
       display: flex;
       flex-direction: column;
-      gap: 0.4rem;
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
+      gap: 6px;
+      margin-bottom: 16px;
+      font-size: 14px;
       margin-left: 10px;
     }
 
@@ -127,12 +128,11 @@
       text-decoration: none;
     }
 
-    /* Caixa meta separada */
     .meta-box {
       display: flex;
       justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 1rem;
+      gap: 16px;
+      margin-bottom: 16px;
       margin-left: 10px;
       margin-right: 12px;
     }
@@ -158,43 +158,42 @@
     }
 
     .label-input {
-      font-size: 0.85rem;
+      font-size: 13px;
       color: var(--cor-rosa);
-      margin: 0.5rem 0 0.2rem 0;
+      margin: 8px 0 4px 10px;
       display: block;
-      margin-left: 10px;
     }
 
     .input-container {
       display: flex;
       align-items: center;
-      gap: 0.3rem;
-      margin-bottom: 1rem;
+      gap: 5px;
+      margin-bottom: 16px;
       margin-left: 10px;
       margin-right: 12px;
     }
 
     .input {
       flex: 1;
-      padding: 0.7rem;
+      padding: 10px;
       border: 2px solid var(--cor-rosa);
       border-radius: 8px;
-      font-size: 0.9rem;
+      font-size: 14px;
       color: #000;
     }
 
     .input::placeholder {
       color: #000;
-      font-size: 0.85rem;
+      font-size: 13px;
     }
 
-    /* 🔔 Mensagem responsável */
+    /* MENSAGEM RESPONSÁVEL */
     .mensagem-responsavel {
       width: 100%;
       background: var(--cor-bege);
       border-top: 5px solid #D9D9D9;
       border-bottom: 5px solid #D9D9D9;
-      padding: 1rem;
+      padding: 16px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -214,7 +213,7 @@
     .notificacao {
       background: red;
       color: #fff;
-      font-size: 0.7rem;
+      font-size: 11px;
       font-weight: bold;
       border-radius: 50%;
       width: 18px;
@@ -225,39 +224,40 @@
     }
 
     .caixa-mensagem {
-      width: 278px;         
-      height: 55px;         
-      border: 2px solid var(--cor-rosa); 
-      margin-top: 0.8rem;
+      width: 278px;
+      height: 55px;
+      border: 2px solid var(--cor-rosa);
+      margin-top: 13px;
       border-radius: 4px;
-      font-size: 0.95rem;
+      font-size: 15px;
       text-align: center;
       color: #000;
-      display: flex;        
+      display: flex;
       align-items: center;
       justify-content: center;
-      background: none;         
-      cursor: pointer;          
-      font-family: inherit;     
-      font-weight: normal;      
+      background: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: normal;
     }
+
     .caixa-mensagem:focus {
       outline: none;
     }
 
-    /* Meta alinhada à esquerda */
+    /* META */
     .meta {
       width: 90%;
-      margin: 1rem 0 1rem 0;
+      margin: 16px 0 16px 0;
       background: var(--cor-bege);
       border-radius: 6px;
-      font-size: 0.9rem;
+      font-size: 14px;
       align-self: flex-start;
-      padding: 1rem;
+      padding: 16px;
     }
 
     .meta h3 {
-      margin: 0 0 0.8rem 0;
+      margin: 0 0 13px 0;
       font-size: 20px;
       font-weight: bold;
       color: var(--cor-marinhoprofundo);
@@ -270,17 +270,17 @@
       background: var(--cor-bege);
       border: 1px solid var(--cor-cinza-borda);
       border-radius: 20px;
-      padding: 0.3rem 0.8rem;
-      font-size: 0.85rem;
+      padding: 4px 10px;
+      font-size: 13px;
       color: var(--cor-cinza-borda);
-      margin-bottom: 0.6rem;
+      margin-bottom: 10px;
     }
 
     .meta-tag button {
       background: none;
       border: none;
-      font-size: 1rem;
-      margin-left: 0.5rem;
+      font-size: 16px;
+      margin-left: 5px;
       cursor: pointer;
       color: #000;
     }
@@ -289,17 +289,17 @@
       background: none;
       border: none;
       color: var(--cor-azul-link);
-      font-size: 0.9rem;
+      font-size: 14px;
       cursor: pointer;
       padding: 0;
       text-align: left;
     }
 
-    /* Footer */
+    /* FOOTER */
     .footer {
       border-top: 5px solid #D9D9D9;
       text-align: center;
-      padding: 1.5rem;
+      padding: 24px;
     }
 
     .footer img {
@@ -311,9 +311,9 @@
       display: inline-block;
       background: var(--cor-rosa);
       color: #fff;
-      font-size: 1rem;
+      font-size: 16px;
       font-weight: bold;
-      padding: 0.8rem 2rem;
+      padding: 12px 32px;
       border-radius: 30px;
       border: none;
       cursor: pointer;
@@ -365,7 +365,7 @@
       </div>
     </div>
 
-    <!-- 🔔 Mensagem responsável -->
+    <!-- Mensagem responsável -->
     <div class="mensagem-responsavel">
       <div class="mensagem-titulo">
         Mensagem responsável <span class="notificacao">1</span>
@@ -394,4 +394,5 @@
   </div>
 </body>
 </html>
+
 
