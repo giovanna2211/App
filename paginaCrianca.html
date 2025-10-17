@@ -7,392 +7,570 @@
   <style>
     :root {
       --cor-bege: #F5F0E1;
-      --cor-pastel: #F5C2C2;
+      --cor-rosinha:#F5C2C2;
       --cor-rosa: #EC5C8F;
       --cor-rosalemonade: #D34C74;
-      --cor-marinhoprofundo: #1A2E45;
-      --cor-azul-link: #2A8BEF;
-      --cor-cinza-borda: #A19999;
-      --cor-cinza: #ddd;
-      --cor-preto: #000;
+      --cor-azul-duo:#1CB0F6;
+      --cor-azul-marinho: #1A2E45;
+      --cor-linha: #D9D9D9;
+      --tag-bg: rgba(26,46,69,0.03);
+      --tag-border: #A19999;
+      --tag-active-border: #1CB0F6;
+      --cor-rosinha-hover: #F489AF; /* nova variável solicitada */
     }
+
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: var(--cor-bege);
+      background-color: var(--cor-bege);
+      display: flex;
+      justify-content: center;
+      padding: 24px 0;
     }
 
     .container {
-      max-width: 100%;
-      min-height: 800px;
-      background: var(--cor-bege);
+      width: 100%;
+      max-width: 400px;
+      background-color: var(--cor-bege);
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    /* HEADER */
-    .header {
-      text-align: center;
-      padding: 24px 16px 16px;
-    }
+    .header { text-align: center; margin-top: 0; margin-bottom: 10px; }
+    .header img { width: 154px; height: auto; }
 
-    .header img {
-      width: 154px;
-      height: 38px;
-      position: relative;
-      top: 16px;
-      left: 111px;
-    }
+    hr { width: 100%; border: none; border-top: 5px solid var(--cor-linha); margin: 0; }
 
-    .header span {
-      font-size: 19px;
-      font-weight: bold;
-      color: var(--cor-rosa);
-      vertical-align: middle;
-    }
-
-    .header p {
-      margin: 8px 0;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--cor-marinhoprofundo);
-    }
-
-    .produto-img {
-      width: 249px;
-      height: 218px;
-      background: var(--cor-cinza);
-      border-radius: 10px;
-      margin: 8px 0 16px 0;
-    }
-
-    /* LINK */
-    .link {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      font-size: 16px;
-      font-weight: 400;
-      color: var(--cor-preto);
-      text-decoration: none;
-      border-bottom: 5px solid #D9D9D9;
-      padding: 16px 17px;
-      margin-left: 10px;
-    }
-
-    .link::after {
-      content: "›";
-      font-size: 16px;
-      margin-left: auto;
-      width: 13px;
-      height: 13px;
-    }
-
-    /* SECTION */
-    .section {
-      width: 100%;
-      padding: 16px;
-    }
-
-    .section h3 {
-      font-size: 20px;
-      font-weight: bold;
-      color: var(--cor-marinhoprofundo);
-      text-align: left;
-      margin-left: 10px;
-    }
-
-    .section .meta-aplicada {
-      color: var(--cor-rosa);
-      font-size: 16px;
-      font-weight: 400;
-      width: 101px;
-      height: 22px;
-      margin-left: 8px;
-    }
-
-    .radio-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 16px;
-      font-size: 14px;
-      margin-left: 10px;
-    }
-
-    .radio-group a {
-      color: var(--cor-azul-link);
-      text-decoration: none;
-    }
-
-    .meta-box {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 16px;
-      margin-left: 10px;
-      margin-right: 12px;
-    }
-
-    .meta-item {
-      flex: 1;
-      background: #F3F3F3;
-      border: 1px solid var(--cor-rosa);
-      border-radius: 10px;
-      font-size: 16px;
-      color: #000;
-      font-weight: 400;
-      text-align: center;
-      width: 193px;
-      height: 37px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .rosa {
-      color: var(--cor-rosa);
-    }
-
-    .label-input {
-      font-size: 13px;
-      color: var(--cor-rosa);
-      margin: 8px 0 4px 10px;
-      display: block;
-    }
-
-    .input-container {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      margin-bottom: 16px;
-      margin-left: 10px;
-      margin-right: 12px;
-    }
-
-    .input {
-      flex: 1;
-      padding: 10px;
-      border: 2px solid var(--cor-rosa);
-      border-radius: 8px;
-      font-size: 14px;
-      color: #000;
-    }
-
-    .input::placeholder {
-      color: #000;
-      font-size: 13px;
-    }
-
-    /* MENSAGEM RESPONSÁVEL */
-    .mensagem-responsavel {
-      width: 100%;
-      background: var(--cor-bege);
-      border-top: 5px solid #D9D9D9;
-      border-bottom: 5px solid #D9D9D9;
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .mensagem-titulo {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--cor-marinhoprofundo);
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      justify-content: center;
-      margin-right: 50px;
-    }
-
-    .notificacao {
-      background: red;
-      color: #fff;
-      font-size: 11px;
-      font-weight: bold;
-      border-radius: 50%;
-      width: 18px;
-      height: 18px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .caixa-mensagem {
-      width: 278px;
-      height: 55px;
-      border: 2px solid var(--cor-rosa);
-      margin-top: 13px;
-      border-radius: 4px;
-      font-size: 15px;
-      text-align: center;
-      color: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: none;
-      cursor: pointer;
-      font-family: inherit;
-      font-weight: normal;
-    }
-
-    .caixa-mensagem:focus {
-      outline: none;
-    }
-
-    /* META */
-    .meta {
-      width: 90%;
-      margin: 16px 0 16px 0;
-      background: var(--cor-bege);
-      border-radius: 6px;
-      font-size: 14px;
-      align-self: flex-start;
-      padding: 16px;
-    }
-
+    .meta { width: 100%; padding: 16px 20px; }
     .meta h3 {
-      margin: 0 0 13px 0;
+      color: var(--cor-azul-marinho);
       font-size: 20px;
-      font-weight: bold;
-      color: var(--cor-marinhoprofundo);
-      text-align: left;
+      font-weight: 700;
+      margin: 0 0 16px 0;
+    }
+
+    .meta-tags {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
     }
 
     .meta-tag {
       display: inline-flex;
       align-items: center;
-      background: var(--cor-bege);
-      border: 1px solid var(--cor-cinza-borda);
-      border-radius: 20px;
-      padding: 4px 10px;
-      font-size: 13px;
-      color: var(--cor-cinza-borda);
-      margin-bottom: 10px;
-    }
-
-    .meta-tag button {
-      background: none;
-      border: none;
-      font-size: 16px;
-      margin-left: 5px;
-      cursor: pointer;
-      color: #000;
-    }
-
-    .btn-link {
-      background: none;
-      border: none;
-      color: var(--cor-azul-link);
+      gap: 8px;
+      padding: 6px 12px;
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-border);
+      border-radius: 999px;
+      color: var(--tag-border);
       font-size: 14px;
+      line-height: 1;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .meta-tag.active {
+      border-color: var(--tag-active-border);
+      color: var(--cor-azul-marinho);
+      background: rgba(28,176,246,0.06);
+    }
+
+    .meta-tag .tag-text { display: inline-block; max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .meta-tag .tag-close {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: transparent;
+      border: none;
+      color: var(--cor-azul-marinho);
+      font-weight: 700;
       cursor: pointer;
       padding: 0;
-      text-align: left;
+      line-height: 1;
     }
 
-    /* FOOTER */
-    .footer {
-      border-top: 5px solid #D9D9D9;
-      text-align: center;
-      padding: 24px;
-    }
-
-    .footer img {
-      width: 335px;
-      height: auto;
-    }
-
-    .btn {
+    .meta a {
+      color: var(--cor-azul-duo);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
       display: inline-block;
-      background: var(--cor-rosa);
-      color: #fff;
+    }
+
+    .form-meta {
+      margin-top: 8px;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .form-meta input[type="text"] {
+      padding: 8px 10px;
+      font-size: 16px;
+      border: 2px solid var(--cor-azul-duo);
+      border-radius: 8px;
+      outline: none;
+      flex: 1;
+      background-color: var(--cor-bege);
+    }
+
+    /* wrapper para prefixo R$ fixo */
+    .input-prefix {
+      position: relative;
+      display: inline-block;
+    }
+    .input-prefix .prefix {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 14px;
+      color: var(--cor-azul-duo);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .form-meta .valor {
+      width: 110px;
+      padding-left: 32px;
+      text-align: right;
+      box-sizing: border-box;
+    }
+
+    .btn-definir {
+      background-color: var(--cor-azul-duo);
+      color: var(--cor-bege);
+      border: none;
+      border-radius: 8px;
       font-size: 16px;
       font-weight: bold;
-      padding: 12px 32px;
-      border-radius: 30px;
+      height: 40px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .btn-definir:hover { background-color: #1495d6; }
+
+    .registrar { width: 100%; padding: 16px 20px; }
+    .registrar h3 {
+      color: var(--cor-azul-marinho);
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0 0 4px 0;
+    }
+    .meta-aplicada { color: var(--cor-azul-duo); font-size: 16px; font-weight: 400; margin-bottom: 10px; }
+
+    .radio-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+
+    label { color: var(--cor-texto); font-size: 16px; font-weight: 400; cursor: pointer; }
+    input[type="radio"] { accent-color: var(--cor-azul-duo); margin-right: 6px; }
+    .radio-group span { color: var(--cor-azul-duo); text-decoration: none; }
+
+    .botoes { display: flex; justify-content: center; gap: 16px; margin-bottom: 12px; }
+    .btn {
+      background-color: var(--cor-rosa);
+      color: var(--cor-bege);
       border: none;
+      border-radius: 30px;
+      font-size: 15px;
+      font-weight: 800;
+      width: 120px;
+      height: 40px;
       cursor: pointer;
       transition: 0.3s;
-      width: 171px;
-      height: 54px;
+    }
+    /* hover passou a usar a nova variável solicitada */
+    .btn:hover { background-color: var(--cor-rosinha-hover); }
+
+    /* estado ativo do botão (depositar / sacar) */
+    .btn.active {
+      background: #ffffff;
+      color: var(--cor-rosa);
+      border: 2px solid var(--cor-rosa);
+    }
+    /* quando ativo e com hover também usa a mesma variável */
+    .btn.active:hover { background-color: var(--cor-rosinha-hover); color: #fff; border-color: var(--cor-rosinha-hover); }
+
+    /* formulário de depósito/saque que aparece ao clicar */
+    .deposit-form,
+    .withdraw-form {
+      width: 100%;
+      margin-top: 8px;
+      display: none;
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-start;
     }
 
-    .btn:hover {
-      background: var(--cor-rosalemonade);
+    .deposit-form.active,
+    .withdraw-form.active {
+      display: flex;
+    }
+
+    .deposit-form label,
+    .withdraw-form label {
+      font-size: 12px;
+      color: var(--cor-rosinha);
+      margin-left: 6px;
+    }
+
+    .deposit-input {
+      width: 100%;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 2px solid var(--cor-rosa);
+      background: transparent;
+      font-size: 14px;
+      box-sizing: border-box;
+      padding-left: 36px; /* espaço para prefixo */
+      transition: border-color 0.15s, box-shadow 0.15s, background-color 0.15s;
+    }
+
+    /* novo: hover e focus do input usam a mesma cor do hover do botão */
+    .deposit-input:hover,
+    .deposit-input:focus {
+      border-color: var(--cor-rosinha-hover);
+      box-shadow: 0 0 0 6px rgba(244,137,175,0.08);
+      outline: none;
+      background-color: #fff;
+    }
+
+    .deposit-input::placeholder { color: #666; }
+
+    .prefix-deposit {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--cor-rosa);
+      font-weight: bold;
+      pointer-events: none;
+    }
+
+    .deposit-row {
+      position: relative;
+      width: 100%;
+    }
+
+    .footer { width: 100%; text-align: center; padding: 24px 16px; }
+    .footer p { color: #333; font-size: 16px; margin-bottom: 10px; }
+    .footer img { width: 335px; height: auto; margin-bottom: 10px; }
+    .footer .btn { width: 171px; height: 54px; font-size: 20px; font-weight: 800; }
+
+    @media (max-width: 420px) {
+      .form-meta .valor { width: 100px; padding-left: 32px; }
+      .meta-tag { font-size: 13px; padding: 5px 10px; }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Header -->
     <div class="header">
-      <img src="./img/logo.png" alt="logo">
-      <p>Produto</p>
-      <div class="produto-img"></div>
+      <img src="./img/logo.png" alt="Logo Cash Coinc">
     </div>
 
-    <!-- Link -->
-    <a class="link" href="#">Ir para o website</a>
+    <hr id="hrTop">
 
-    <!-- Registrar -->
-    <div class="section">
+    <div class="meta" id="metaSection">
+      <h3>Meta</h3>
+
+      <div class="meta-tags" id="metaTags" aria-live="polite"></div>
+
+      <a id="criarMeta" href="#">+ Criar meta</a>
+
+      <div class="form-meta" id="formMeta">
+        <div class="form-row">
+          <input type="text" id="nomeMeta" placeholder="Item" />
+
+          <div class="input-prefix" aria-hidden="false">
+            <span class="prefix">R$</span>
+            <input type="text" id="valorMeta" class="valor" placeholder="Valor" aria-label="Valor em reais" />
+          </div>
+        </div>
+        <button class="btn-definir" id="definirMeta">DEFINIR META</button>
+      </div>
+    </div>
+
+    <hr id="hrBottom">
+
+    <div class="registrar">
       <h3>Registrar</h3>
       <p class="meta-aplicada">Meta aplicada</p>
-
       <div class="radio-group">
-        <label><input type="radio" name="meta"> Economizar para <a href="#">meta</a></label>
-        <label><input type="radio" name="meta"> Economizar apenas.</label>
+        <label><input type="radio" name="opcao" id="radioMeta" value="meta" checked> Economizar para <span id="registrarMetaText">meta</span></label>
+        <label><input type="radio" name="opcao" id="radioSave" value="economizar"> Economizar</label>
       </div>
 
-      <div class="meta-box">
-        <div class="meta-item">Video Game Xbox</div>
-        <div class="meta-item"><span class="rosa">R$</span>&nbsp;3.000,00</div>
+      <div class="botoes">
+        <button id="depositBtn" class="btn">DEPOSITAR</button>
+        <button id="withdrawBtn" class="btn">SACAR</button>
       </div>
 
-      <label class="label-input">Valor do depósito</label>
-      <div class="input-container">
-        <input class="input" type="number" placeholder="R$ 0" >
+      <!-- campo que aparece ao clicar em DEPOSITAR -->
+      <div id="depositForm" class="deposit-form" aria-hidden="true">
+        <label for="depositValue">Valor do depósito (R$)</label>
+        <div class="deposit-row">
+          <span class="prefix-deposit">R$</span>
+          <input id="depositValue" type="text" class="deposit-input" placeholder="R$ 0" />
+        </div>
       </div>
 
-      <label class="label-input">Valor do saque</label>
-      <div class="input-container">
-        <input class="input" type="number" placeholder="R$ 0">
+      <!-- campo que aparece ao clicar em SACAR -->
+      <div id="withdrawForm" class="withdraw-form" aria-hidden="true">
+        <label for="withdrawValue">Valor do saque (R$)</label>
+        <div class="deposit-row">
+          <span class="prefix-deposit">R$</span>
+          <input id="withdrawValue" type="text" class="deposit-input" placeholder="R$ 0" />
+        </div>
       </div>
     </div>
 
-    <!-- Mensagem responsável -->
-    <div class="mensagem-responsavel">
-      <div class="mensagem-titulo">
-        Mensagem responsável <span class="notificacao">1</span>
-      </div>
-      <button class="caixa-mensagem">
-        Parabéns pelo progresso filho(a)!
-      </button>
-    </div>
+    <hr>
 
-    <!-- Meta -->
-    <div class="meta">
-      <h3>Meta</h3>
-      <div class="meta-tag">
-        Video Game Xbox <button>×</button>
-      </div>
-      <br>
-      <button class="btn-link">+ Criar meta</button>
-    </div>
-
-    <!-- Footer -->
     <div class="footer">
       <p>Jogue agora no seu próprio SmartCoinc!</p>
-      <img src="./img/porco.png" alt="porquinho" class="porco-img">
+      <img src="./img/porco.png" alt="Porquinho">
+      <br>
       <button class="btn">JOGAR</button>
     </div>
   </div>
+
+  <script>
+    /* =======================
+       Meta creation logic
+       ======================= */
+    const criarMeta = document.getElementById('criarMeta');
+    const formMeta = document.getElementById('formMeta');
+    const definirMeta = document.getElementById('definirMeta');
+    const nomeMeta = document.getElementById('nomeMeta');
+    const valorMeta = document.getElementById('valorMeta');
+    const metaTags = document.getElementById('metaTags');
+    const registrarMetaText = document.getElementById('registrarMetaText');
+
+    // toggle form display
+    criarMeta.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isOpen = formMeta.style.display === 'flex' || formMeta.style.display === 'block';
+      formMeta.style.display = isOpen ? 'none' : 'flex';
+      if (!isOpen) {
+        nomeMeta.focus();
+      }
+    });
+
+    // create tag element and wire interactions
+    function createMetaTag(name, value) {
+      const tag = document.createElement('span');
+      tag.className = 'meta-tag';
+      tag.tabIndex = 0;
+
+      const spanText = document.createElement('span');
+      spanText.className = 'tag-text';
+      spanText.textContent = name + (value ? ' — R$ ' + value : '');
+
+      const btn = document.createElement('button');
+      btn.className = 'tag-close';
+      btn.type = 'button';
+      btn.setAttribute('aria-label', 'Remover meta');
+      btn.textContent = '✕';
+
+      // tag click: activate tag (except when clicking the close button)
+      tag.addEventListener('click', (ev) => {
+        if (ev.target === btn) return;
+        setActiveTag(tag, name);
+      });
+
+      // keyboard activation
+      tag.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Enter' || ev.key === ' ') {
+          ev.preventDefault();
+          setActiveTag(tag, name);
+        }
+      });
+
+      // close button
+      btn.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        const wasActive = tag.classList.contains('active');
+        tag.remove();
+        if (wasActive) {
+          registrarMetaText.textContent = 'meta';
+        }
+      });
+
+      tag.appendChild(spanText);
+      tag.appendChild(btn);
+      metaTags.appendChild(tag);
+
+      // make the new tag active immediately
+      setActiveTag(tag, name);
+    }
+
+    function setActiveTag(tagElement, name) {
+      // remove active from all
+      metaTags.querySelectorAll('.meta-tag').forEach(t => t.classList.remove('active'));
+      tagElement.classList.add('active');
+      registrarMetaText.textContent = name;
+      // ensure the "Economizar para meta" radio is selected
+      const metaRadio = document.getElementById('radioMeta');
+      if (metaRadio) metaRadio.checked = true;
+      // show meta section if hidden
+      showMetaSection(true);
+    }
+
+    // define meta button
+    definirMeta.addEventListener('click', () => {
+      const nome = nomeMeta.value.trim();
+      const valor = valorMeta.value.trim();
+      if (!nome) {
+        alert('Preencha o nome da meta!');
+        nomeMeta.focus();
+        return;
+      }
+      createMetaTag(nome, valor);
+      formMeta.style.display = 'none';
+      nomeMeta.value = '';
+      valorMeta.value = '';
+    });
+
+    // keyboard shortcuts inside meta form
+    [nomeMeta, valorMeta].forEach(inp => {
+      inp.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          definirMeta.click();
+        }
+      });
+    });
+
+    // ctrl/cmd + Enter to submit when form open
+    document.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'Enter' && (formMeta.style.display === 'flex' || formMeta.style.display === 'block')) {
+        definirMeta.click();
+      }
+    });
+
+    // show/hide meta section (reuses hrTop/hrBottom logic)
+    const metaSection = document.getElementById('metaSection');
+    const hrTop = document.getElementById('hrTop');
+    const hrBottom = document.getElementById('hrBottom');
+    const radios = document.querySelectorAll('input[name="opcao"]');
+
+    function showMetaSection(show) {
+      if (show) {
+        metaSection.style.display = 'block';
+        hrBottom.style.display = '';
+        metaSection.setAttribute('aria-hidden', 'false');
+      } else {
+        metaSection.style.display = 'none';
+        hrBottom.style.display = 'none';
+        metaSection.setAttribute('aria-hidden', 'true');
+      }
+    }
+
+    radios.forEach(r => {
+      r.addEventListener('change', (e) => {
+        if (e.target.value === 'economizar') {
+          showMetaSection(false);
+        } else {
+          showMetaSection(true);
+        }
+      });
+    });
+
+    /* =======================
+       Depositar / Sacar logic
+       ======================= */
+    const depositBtn = document.getElementById('depositBtn');
+    const withdrawBtn = document.getElementById('withdrawBtn');
+    const depositForm = document.getElementById('depositForm');
+    const withdrawForm = document.getElementById('withdrawForm');
+    const depositInput = document.getElementById('depositValue');
+    const withdrawInput = document.getElementById('withdrawValue');
+
+    depositBtn.addEventListener('click', () => {
+      const active = depositBtn.classList.contains('active');
+      if (!active) {
+        depositBtn.classList.add('active');
+        withdrawBtn.classList.remove('active');
+        depositForm.classList.add('active');
+        withdrawForm.classList.remove('active');
+        depositForm.setAttribute('aria-hidden', 'false');
+        withdrawForm.setAttribute('aria-hidden', 'true');
+      }
+      depositInput.focus();
+      depositInput.select();
+    });
+
+    withdrawBtn.addEventListener('click', () => {
+      const active = withdrawBtn.classList.contains('active');
+      if (!active) {
+        withdrawBtn.classList.add('active');
+        depositBtn.classList.remove('active');
+        withdrawForm.classList.add('active');
+        depositForm.classList.remove('active');
+        withdrawForm.setAttribute('aria-hidden', 'false');
+        depositForm.setAttribute('aria-hidden', 'true');
+      }
+      withdrawInput.focus();
+      withdrawInput.select();
+    });
+
+    // Enter behavior for deposit/withdraw inputs (placeholder action)
+    depositInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        console.log('Depósito solicitado:', depositInput.value);
+        depositInput.blur();
+      }
+    });
+    withdrawInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        console.log('Saque solicitado:', withdrawInput.value);
+        withdrawInput.blur();
+      }
+    });
+
+    /* =======================
+       Init UI state
+       ======================= */
+    (function init() {
+      // keep hrTop visible
+      hrTop.style.display = '';
+      // form meta hidden by default
+      formMeta.style.display = 'none';
+      // deposit/withdraw forms hidden
+      depositForm.classList.remove('active');
+      withdrawForm.classList.remove('active');
+      depositBtn.classList.remove('active');
+      withdrawBtn.classList.remove('active');
+      depositForm.setAttribute('aria-hidden', 'true');
+      withdrawForm.setAttribute('aria-hidden', 'true');
+
+      // set meta section visibility according to checked radio
+      const checked = document.querySelector('input[name="opcao"]:checked');
+      if (checked && checked.value === 'economizar') {
+        showMetaSection(false);
+      } else {
+        showMetaSection(true);
+      }
+    })();
+  </script>
 </body>
 </html>
-
-
